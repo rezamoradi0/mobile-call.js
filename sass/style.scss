@@ -1,0 +1,323 @@
+$darkerWhite:#666;
+$darkWhite:#888;
+$middleDarkWhite:#bbb;
+$lightWhite:#e8e8e8;
+
+$galssColor:#1C212C;
+$darkGlassColor:#161A24;
+@font-face {
+    font-family: JetBrains;
+    src: url("../fonts/webfonts/JetBrainsMono-Medium.woff2")format("woff2");
+}
+*{
+    box-sizing: border-box;
+    
+}
+html,body{
+height:100%;
+margin: 0;
+background: #3e3e3e;
+}
+
+.place-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.phone{
+    width: 240px;
+    height: 480px;
+    border: 9px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    .phone--glass{
+        width: 100%;
+        height: 100%;
+        border:  2px solid rgba($color: #ccc, $alpha: 0.31);
+        border-top: 3px solid rgba($color: #ccc, $alpha: 0.25);
+        border-bottom: 1px solid rgba($color: #ccc, $alpha: 0.2);
+        border-radius: 12px;
+        background-color: $galssColor;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+    }
+    .phone--glass-call{
+
+        display: flex ;
+        flex-direction: column;
+        width: 100%;
+       // overflow: hidden;
+        height: 345px;
+        transition: all 1s;
+      
+        justify-content: flex-end;
+        &.in-call{
+            height: 300px;
+            .numbersPad{
+                height: 160px;
+                row-gap: 30px;
+            }
+        }
+        
+    }
+    .phone--btnPad{
+        
+        width: 100%;
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #0D0F16;
+    }
+    .phone-btn{
+        color: $darkWhite;
+        font-size: 10px;
+        &.back{
+            font-size: 14px;
+        }
+    }
+    .phone-call-btnPad{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $darkGlassColor;
+        padding: 20px 5px;
+        position: relative;
+        overflow: hidden;
+        &>div{
+            width: 33%;
+            color: $lightWhite;
+           text-align: center;
+        
+            font-size: 12px;
+            color: $middleDarkWhite;
+           
+        }
+        .call-btn{
+            
+            padding: 4px 26px;
+            background-color: #41D445;
+            color: $lightWhite;
+            font-size: 13px;
+            border-radius: 20px;
+            transition: all 500ms;
+            i{
+                transition: all 500ms;
+            }
+            &.in-call{
+                i{
+                  
+                    rotate: -135deg;
+                }
+            
+                background-color: #E82447;
+            }
+        }
+        .contact-btn ,.sms-btn{
+            transition: all 500ms;
+        }
+        .go{
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+    }
+    .numbersPad{
+        display: grid;
+        width: 100%;
+        // /height: 230px;
+        padding: 10px 10px;
+        grid-template-columns: repeat(3,1fr);
+        box-sizing: border-box;
+        font-family: JetBrains;
+        background-color: $darkGlassColor;
+        align-items: center;
+        height: 240px;
+        transition: all 1s;
+        .number--key,.number--icon{
+        
+           
+            padding: 4px 0px;
+           color: white;
+          // border: 1px solid white;
+           text-align: center;
+           display: flex;
+      
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           transition: all 600ms;
+           border-radius: 14px;
+           width: 55px;
+           height: 55px;
+           margin: auto;
+           cursor: pointer;
+            
+           &.disapre{
+            width: 0px;
+            height: 0px;
+            opacity: 0;
+            .key--number{
+            opacity: 0;
+            }
+
+           }
+            .key--number{
+                font-size: 30px;
+                transition: all 500ms;
+                opacity: 1;
+            }
+            .key--sing{
+                color: $darkerWhite;
+              
+                line-height: 30px;
+                font-size: 22px;
+         
+              
+            }
+           .key--commnet{
+            color: $darkerWhite;
+            font-size: 7px;
+            letter-spacing: 1px;
+           }
+        }
+        .number--icon{
+            display: none;
+            .key--number{
+                font-size: 20px;   
+               }
+        }
+        .hoverd--key{
+            background-color: lighten($color: $darkGlassColor, $amount: 3);
+        }
+        .clicked--key{
+
+            background-color: lighten($color: $darkGlassColor, $amount: 8);
+        }
+    }
+    .numbers--input{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 10px 6px;
+        background-color: #161A24;
+        border-bottom: #1C212C;
+        position: relative;
+        .tab-name{
+            color: $lightWhite;
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+           font-family: monospace;
+            font-size: 10px;
+        }
+        .hr{
+
+            color: $darkWhite;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8%;
+            border: 1px solid $darkWhite;
+        }
+        .number--input--feild{
+            transition: all 500ms;
+            background-color: transparent;
+            border: none;
+            color: $lightWhite;
+            font-family: JetBrains;
+           max-width: 90%;
+           outline: none;
+            caret-color: #888;
+        }
+        .number--delete{
+            transition: all 500ms;
+            color: $darkerWhite;
+            width: 120px;
+        }
+
+        &.incall{
+            height: 100px;
+            .number--delete{
+               opacity: 0;
+
+            }
+            .number--input--feild{
+                max-width: 100%;
+                font-size: 20px;
+            
+            }
+        }
+    }
+    .contact--info{
+        display: flex;
+        top: 47px;
+        position: absolute;
+        width: 98%;
+        justify-content:space-between;
+        background-color: #1C212C;
+        padding-right: 3px;
+        &.goAway{
+            transform: translateX(500px);
+           
+            transition: transform 1s;
+
+        }
+     
+        .contact--info--pic{
+            width: 40px;
+            height: 40px;
+            background-color: #27822a;
+            position: relative;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            .contact--info--abbr{
+            position: absolute;
+            bottom: 0px;
+            width:100%;
+          
+            vertical-align: bottom;
+              font-size: 28px;   
+              color: $lightWhite;
+              opacity: 0.4;
+            
+            }
+        }
+        .contact--info--detail{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 14px;
+            font-family:  JetBrains;
+            font-size: 10px;
+           margin-right: auto;
+          .detail--name{
+            color: $lightWhite;
+          }
+          .detail--number{
+            color: $darkWhite;
+          }
+        }
+        .contact--info--icon{
+            align-self: center;
+            padding-right: 20px;
+            color:#35b43a;
+            font-size: 13px;
+        }
+    }
+
+    }

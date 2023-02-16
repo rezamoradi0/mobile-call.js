@@ -1,0 +1,284 @@
+@font-face {
+  font-family: JetBrains;
+  src: url("../fonts/webfonts/JetBrainsMono-Medium.woff2") format("woff2");
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #3e3e3e;
+}
+
+.place-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.phone {
+  width: 240px;
+  height: 480px;
+  border: 9px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.phone .phone--glass {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(204, 204, 204, 0.31);
+  border-top: 3px solid rgba(204, 204, 204, 0.25);
+  border-bottom: 1px solid rgba(204, 204, 204, 0.2);
+  border-radius: 12px;
+  background-color: #1C212C;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.phone .phone--glass-call {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 345px;
+  transition: all 1s;
+  justify-content: flex-end;
+}
+.phone .phone--glass-call.in-call {
+  height: 300px;
+}
+.phone .phone--glass-call.in-call .numbersPad {
+  height: 160px;
+  row-gap: 30px;
+}
+.phone .phone--btnPad {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #0D0F16;
+}
+.phone .phone-btn {
+  color: #888;
+  font-size: 10px;
+}
+.phone .phone-btn.back {
+  font-size: 14px;
+}
+.phone .phone-call-btnPad {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #161A24;
+  padding: 20px 5px;
+  position: relative;
+  overflow: hidden;
+}
+.phone .phone-call-btnPad > div {
+  width: 33%;
+  color: #e8e8e8;
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+}
+.phone .phone-call-btnPad .call-btn {
+  padding: 4px 26px;
+  background-color: #41D445;
+  color: #e8e8e8;
+  font-size: 13px;
+  border-radius: 20px;
+  transition: all 500ms;
+}
+.phone .phone-call-btnPad .call-btn i {
+  transition: all 500ms;
+}
+.phone .phone-call-btnPad .call-btn.in-call {
+  background-color: #E82447;
+}
+.phone .phone-call-btnPad .call-btn.in-call i {
+  rotate: -135deg;
+}
+.phone .phone-call-btnPad .contact-btn, .phone .phone-call-btnPad .sms-btn {
+  transition: all 500ms;
+}
+.phone .phone-call-btnPad .go {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.phone .numbersPad {
+  display: grid;
+  width: 100%;
+  padding: 10px 10px;
+  grid-template-columns: repeat(3, 1fr);
+  box-sizing: border-box;
+  font-family: JetBrains;
+  background-color: #161A24;
+  align-items: center;
+  height: 240px;
+  transition: all 1s;
+}
+.phone .numbersPad .number--key, .phone .numbersPad .number--icon {
+  padding: 4px 0px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 600ms;
+  border-radius: 14px;
+  width: 55px;
+  height: 55px;
+  margin: auto;
+  cursor: pointer;
+}
+.phone .numbersPad .number--key.disapre, .phone .numbersPad .number--icon.disapre {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+.phone .numbersPad .number--key.disapre .key--number, .phone .numbersPad .number--icon.disapre .key--number {
+  opacity: 0;
+}
+.phone .numbersPad .number--key .key--number, .phone .numbersPad .number--icon .key--number {
+  font-size: 30px;
+  transition: all 500ms;
+  opacity: 1;
+}
+.phone .numbersPad .number--key .key--sing, .phone .numbersPad .number--icon .key--sing {
+  color: #666;
+  line-height: 30px;
+  font-size: 22px;
+}
+.phone .numbersPad .number--key .key--commnet, .phone .numbersPad .number--icon .key--commnet {
+  color: #666;
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+.phone .numbersPad .number--icon {
+  display: none;
+}
+.phone .numbersPad .number--icon .key--number {
+  font-size: 20px;
+}
+.phone .numbersPad .hoverd--key {
+  background-color: #1c212d;
+}
+.phone .numbersPad .clicked--key {
+  background-color: #252c3d;
+}
+.phone .numbers--input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 10px 6px;
+  background-color: #161A24;
+  border-bottom: #1C212C;
+  position: relative;
+}
+.phone .numbers--input .tab-name {
+  color: #e8e8e8;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: monospace;
+  font-size: 10px;
+}
+.phone .numbers--input .hr {
+  color: #888;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8%;
+  border: 1px solid #888;
+}
+.phone .numbers--input .number--input--feild {
+  transition: all 500ms;
+  background-color: transparent;
+  border: none;
+  color: #e8e8e8;
+  font-family: JetBrains;
+  max-width: 90%;
+  outline: none;
+  caret-color: #888;
+}
+.phone .numbers--input .number--delete {
+  transition: all 500ms;
+  color: #666;
+  width: 120px;
+}
+.phone .numbers--input.incall {
+  height: 100px;
+}
+.phone .numbers--input.incall .number--delete {
+  opacity: 0;
+}
+.phone .numbers--input.incall .number--input--feild {
+  max-width: 100%;
+  font-size: 20px;
+}
+.phone .contact--info {
+  display: flex;
+  top: 47px;
+  position: absolute;
+  width: 98%;
+  justify-content: space-between;
+  background-color: #1C212C;
+  padding-right: 3px;
+}
+.phone .contact--info.goAway {
+  transform: translateX(500px);
+  transition: transform 1s;
+}
+.phone .contact--info .contact--info--pic {
+  width: 40px;
+  height: 40px;
+  background-color: #27822a;
+  position: relative;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.phone .contact--info .contact--info--pic .contact--info--abbr {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  vertical-align: bottom;
+  font-size: 28px;
+  color: #e8e8e8;
+  opacity: 0.4;
+}
+.phone .contact--info .contact--info--detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 14px;
+  font-family: JetBrains;
+  font-size: 10px;
+  margin-right: auto;
+}
+.phone .contact--info .contact--info--detail .detail--name {
+  color: #e8e8e8;
+}
+.phone .contact--info .contact--info--detail .detail--number {
+  color: #888;
+}
+.phone .contact--info .contact--info--icon {
+  align-self: center;
+  padding-right: 20px;
+  color: #35b43a;
+  font-size: 13px;
+}/*# sourceMappingURL=style.css.map */

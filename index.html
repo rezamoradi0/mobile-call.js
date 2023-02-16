@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>TO DO LiST</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/all.css">
+    </head>
+    <body>
+        <div class="place-holder">
+            <div class="phone">
+            <div  class="phone--glass">
+                <div class="phone--glass-call">
+                    <div style="display: none;" data-id="contact-info-obj" class="contact--info">
+                        <div class="contact--info--pic">
+                            <span class="contact--info--abbr">DC</span>
+                        </div>
+                        <div class="contact--info--detail">
+                            <div class="detail--name">Reza Moradi</div>
+                            <div class="detail--number">09334880498</div>
+                        </div>
+                        <div class="contact--info--icon">
+                            <i class="fa-solid fa-phone-flip"></i>
+                        </div>
+                    </div>
+                    <div class="numbers--input">
+                        <span class="tab-name">DIAL</span>
+                        <span class="hr"></span>
+                        
+                        <input id="phone--number--input" maxlength="11" minlength="10" class="number--input--feild" type="tel">
+                        <div id="phone--number--input-delete" class="number--delete">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </div>
+                    </div>
+    
+                    <div class="numbersPad">
+                       
+                        <div class="number--icon disapre">
+                            <span class="key--number"><i class="fa-light fa-microphone-slash"></i></span>
+                            <span class="key--commnet">MUTE</span>
+                        </div>
+                        <div class="number--icon disapre">
+                            <span class="key--number"><i class="fa-light fa-volume"></i></span>
+                            <span class="key--commnet">SPEAKER</span>
+                        </div>
+                        <div class="number--icon disapre">
+                            <span class="key--number"><i class="fa-light fa-keyboard"></i></span>
+                            <span class="key--commnet">KEYPAD</span>
+                        </div>
+                        <div class="number--icon disapre">
+                            <span class="key--number"><i class="fa-light fa-circle-plus"></i></span>
+                            <span class="key--commnet">ADD CALL</span>
+                        </div>
+                        <div class="number--icon disapre">
+                            <span class="key--number"><i class="fa-light fa-arrow-right-from-bracket"></i></i></span>
+                            <span class="key--commnet">CALL TRANSFER</span>
+                        </div>
+                        <div class="number--icon disapre">
+                            <span class="key--number"><i class="fa-light fa-user"></i></i></span>
+                            <span class="key--commnet">CONTACT</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">1</span>
+                            <span class="key--commnet">ABC</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">2</span>
+                            <span class="key--commnet">EFG</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">3</span>
+                            <span class="key--commnet">HIJ</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">4</span>
+                            <span class="key--commnet">KLM</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">5</span>
+                            <span class="key--commnet">NOP</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">6</span>
+                            <span class="key--commnet">QRS</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">7</span>
+                            <span class="key--commnet">TUV</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">8</span>
+                            <span class="key--commnet">WXY</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">9</span>
+                            <span class="key--commnet">Z</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--sing">*</span>
+                            <span class="key--commnet">P</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--number">0</span>
+                            <span class="key--commnet">+</span>
+                        </div>
+                        <div class="number--key">
+                            <span class="key--sing">#</span>
+                            <span class="key--commnet">W</span>
+                        </div>
+                    </div>
+                    <div class="phone-call-btnPad">
+                     
+                        <div class="sms-btn">
+                            <i class="fa-regular fa-message-dots"></i>
+                        </div>
+                        <div class="call-btn" id="call-btn">
+                            <i class="fa-solid fa-phone-flip"></i>
+                        </div>
+                        <div class="contact-btn">
+                            <i class="fa-regular fa-user-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone--btnPad">
+                    <div class="phone-btn back">
+                        <i class="fa-solid fa-caret-left"></i>
+                        
+                    </div>
+                    <div class="phone-btn">
+                        <i class="fa-regular fa-circle"></i>
+                    </div>
+                    <div class="phone-btn"><i class="fa-solid fa-bars"></i></div>
+                </div>
+              
+            </div>
+
+            </div>
+        </div>
+        <script src="./json/contanct.js"></script>
+        <script src="./js/calling.js"></script>
+    </body>
+</html>
